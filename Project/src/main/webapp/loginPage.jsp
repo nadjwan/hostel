@@ -10,7 +10,7 @@
 		<div class="title">Login Form</div>
 		<form action="LoginServlet" method="post">
 			<div class="field">
-				<input type="text" name="email" required> <label>Email Address</label>
+				<input type="email" name="email" required> <label>Email Address</label>
 			</div>
 			<div class="field">
 				<input type="password" name="pass" required> <label>Password</label>
