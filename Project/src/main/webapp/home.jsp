@@ -64,7 +64,7 @@ String name = "";
     		</div>
   		</div>
   		<a href="listBooking.jsp" class="w3-bar-item w3-button w3-padding-16">Bookings</a>
-  		<a href="profile.jsp" class="w3-bar-item w3-button w3-padding-16">Profile</a>
+  		<a href="profilePage.jsp" class="w3-bar-item w3-button w3-padding-16">Profile</a>
   		<a href="homePage.jsp" class="w3-bar-item w3-button w3-padding-16">Go to Customer Page</a>
   		<a href="LogoutServlet" class="w3-bar-item w3-button w3-padding-16">Logout</a>
 	</div>
