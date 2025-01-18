@@ -74,7 +74,24 @@
 		<% } %>
 		<a href="LogoutServlet" class="w3-bar-item w3-button w3-padding-16">Logout</a>
 	</div>
-	
+	<%
+		int cbo = 0;
+		try{
+			con = ConnectionManager.getConnection();
+			
+			ps = con.prepareStatement("SELECT COUNT(booking_id) AS count FROM booking WHERE user_id=?");
+			ps.setInt(1, uid);
+			rs = ps.executeQuery();
+			if(rs.next()){
+				cbo = rs.getInt("count");
+			}
+			con.close();
+		}
+		catch(Exception e){
+			out.print("<p>" + e + "</p>");
+		}
+		if(cbo > 0){
+	%>
 	<div class="w3-container">
   		<hr>
   		<div class="w3-center">
@@ -254,5 +271,19 @@
 			</script>
 		</div>
 	</div>
+	<%
+		}
+		else{
+	%>
+	<div class="w3-container">
+		<hr>
+		<div class="w3-center">
+			<h2>Please make a reservation first</h2>
+			<hr>
+		</div>
+	</div>
+	<%
+		}
+	%>
 </body>
 </html>
