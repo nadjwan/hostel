@@ -82,7 +82,8 @@ public class AddHostelController extends HttpServlet {
 		h.setUserId(Integer.parseInt(request.getParameter("uid")));
 		
 		dao.addHostel(h);
-		
+
+		request.setAttribute("message", "Data insert into database");
 		request.setAttribute("hostels", HostelDAO.getAllHostel(h.getUserId()));
 		
 		RequestDispatcher req = request.getRequestDispatcher("listHostel.jsp");
