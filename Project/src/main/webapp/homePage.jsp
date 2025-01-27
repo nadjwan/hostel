@@ -118,7 +118,7 @@ response.setDateHeader("Expires", 0);
 			con = ConnectionManager.getConnection();
 			
 			stmt = con.createStatement();
-			String sql = "SELECT * FROM hostel";
+			String sql = "SELECT * FROM hostel WHERE user_id != " + uid;
 			
 			rs = stmt.executeQuery(sql);
 			while(rs.next()){
