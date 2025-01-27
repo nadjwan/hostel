@@ -3,6 +3,17 @@
 <%@ page import="hostel.connection.ConnectionManager" %>
 <%@ page import="java.sql.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<% 
+    String message = (String) request.getAttribute("message");
+    if (message != null) { 
+%>
+    <script type="text/javascript">
+        alert('<%= message %>');
+    </script>
+<% 
+    } 
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +88,6 @@ else{
 			<table class="w3-table w3-striped w3-bordered">
 				<thead>
 					<tr class="w3-theme">
-						<th>ID</th>
   						<th>Hostel Name</th>
   						<th>Hostel Price</th>
   						<th>Number of pax</th>
@@ -89,7 +99,6 @@ else{
 				<tbody>
 					<c:forEach items="${hostels}" var="h" varStatus="hostels">
 					<tr>
-						<td><c:out value="${h.id}"/></td>
             			<td><c:out value="${h.name}"/></td>
             			<td><c:out value="${h.price}"/></td> 
             			<td><c:out value="${h.pax}" /></td> 
