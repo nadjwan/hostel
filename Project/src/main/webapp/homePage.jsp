@@ -159,6 +159,7 @@ response.setDateHeader("Expires", 0);
 				<%
 				}
 				%>
+				<li><%= rs.getString("description") %></li>
 				<li><button onclick="document.getElementById('id<%= hid %>').style.display='block'" class="w3-button w3-theme">Check Availability</button></li>
 			</ul>
 			<div id="id<%= hid %>" class="w3-modal">
