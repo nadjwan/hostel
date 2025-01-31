@@ -83,7 +83,7 @@ public class AddBookingController extends HttpServlet {
 			//5. close connection
 			con.close();
 			out.println("<script type='text/javascript'>");
-			out.println("alert"+"('Data insert to database');");
+			out.println("alert"+"('Booking successful');");
 			out.println("var newLocation = 'myBooking.jsp';");
 			out.println("window.location = newLocation;");
 			out.println("</script>");
